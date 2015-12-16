@@ -35,7 +35,7 @@ module MyApp.controllers
             }
 
 
-            $scope.DeleteEmployee = function (): void
+            $scope.DeleteEmployee = function (): any
             {
                 var ID: number = $scope.EmployeeID;
                 $http.delete('/api/Employee/' + ID).success(function() { $scope.Message = "Deleted Employee"});
