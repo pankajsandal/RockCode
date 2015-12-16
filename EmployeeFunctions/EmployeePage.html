@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+    <title>Employee Home Page</title>
+</head>
+<body>  
+    <div ng-app="MyApp" ng-controller="EmployeeController">
+        <form ng-submit="AddEmployee()">
+            <input ng-model="EmployeeID" type="text" id="txtEmployeeID" placeholder="Enter EmployeeID" />
+            <br />
+            <input ng-model="Name" type="text" id="txtName" placeholder="Enter Name" />
+            <br />
+            <input ng-model="Dept" type="text" id="txtDept" placeholder="Enter Department" />
+            <br />
+            <button id="btnAddEmployee" type="submit" value="Add">Add Employee</button>
+            <br />
+            <button id="btnGetDetails" type="button" ng-click="GetEmployee()">Get Employee</button>
+            <br />
+            <button id="btnGetAllDetails" type="button" ng-click="GetAllEmployee()">Get All Employee</button>
+            <br />
+            <button id="btnDelete" type="button" ng-click="DeleteEmployee()">Delete Employee</button>
+            <br />
+            <label id="lblMsg" ng-model="Message"></label>
+            <ul ng-repeat="Employee in EmployeeList">
+                <li>{{Employee.EmployeeID}}</li>
+                <li>{{Employee.Name}}</li>
+                <li>{{Employee.Dept}}</li>
+                <li>{{Employee.DOB}}</li>
+            </ul>
+        </form>
+        <p ng-bind ="Name"></p>
+        <p ng-bind ="Dept"></p>
+    </div>
+    <script type="text/javascript" src="Scripts/angular.js"></script>
+    <script type="text/javascript" src="Scripts/angular-route.js"></script>
+    <script type="text/javascript" src="App/app.Route.js"></script>
+    <script type="text/javascript" src="App/app.Module.js"></script>
+    <script type="text/javascript" src="App/Controllers/EmployeeController.js"></script>
+</body>
+</html>
