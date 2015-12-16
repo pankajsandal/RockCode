@@ -20,8 +20,9 @@
             <button id="btnGetAllDetails" type="button" ng-click="GetAllEmployee()">Get All Employee</button>
             <br />
             <button id="btnDelete" type="button" ng-click="DeleteEmployee()">Delete Employee</button>
-            <br />
-            <label id="lblMsg" ng-model="Message"></label>
+            <br />                        
+            <p ng-bind="Message"></p>
+            <br/>
             <ul ng-repeat="Employee in EmployeeList">
                 <li>{{Employee.EmployeeID}}</li>
                 <li>{{Employee.Name}}</li>

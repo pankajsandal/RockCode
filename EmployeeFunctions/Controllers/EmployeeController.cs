@@ -52,12 +52,12 @@ namespace EmployeeFunctions.Controllers
         }
 
         public HttpResponseMessage PostEmployee([FromBody]EmployeeDetail empObject)
-        {            
-                empObject = _employeeInterface.Create(empObject);            
-                var response = Request.CreateResponse<EmployeeDetail>(HttpStatusCode.Created,empObject);
-                string uri = Url.Route(null, new { id = empObject.EmployeeID }).ToString();
-                response.Headers.Location = new Uri(Request.RequestUri, uri);
-                return response; 
+        {
+            empObject = _employeeInterface.Create(empObject);
+            var response = Request.CreateResponse<EmployeeDetail>(HttpStatusCode.Created, empObject);
+            string uri = Url.Route(null, new { id = empObject.EmployeeID }).ToString();
+            response.Headers.Location = new Uri(Request.RequestUri, uri);
+            return response; 
             
         }
        

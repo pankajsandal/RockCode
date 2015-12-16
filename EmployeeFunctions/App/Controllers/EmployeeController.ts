@@ -30,15 +30,19 @@ module MyApp.controllers
                 empObj.Dept = $scope.Dept;
                // document.body.innerHTML = "insert into Add Prod";
                 //this.httpService.post('/api/Employee', empObj);
-                $http.post('/api/Employee', empObj).success(function () { $scope.Message = "Employee Added" });
+                $http.post('/api/Employee', empObj);               
+                $scope.Message = "Employee Added";
+               
                 
             }
 
 
-            $scope.DeleteEmployee = function (): any
+            $scope.DeleteEmployee = function (): void
             {
                 var ID: number = $scope.EmployeeID;
-                $http.delete('/api/Employee/' + ID).success(function() { $scope.Message = "Deleted Employee"});
+                $http.delete('/api/Employee/' + ID).success(function () { $scope.Message = "Deleted Employee"; });                
+                   
+                
                
             }
 

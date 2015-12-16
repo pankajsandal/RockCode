@@ -22,7 +22,8 @@ var MyApp;
                     empObj.Dept = $scope.Dept;
                     // document.body.innerHTML = "insert into Add Prod";
                     //this.httpService.post('/api/Employee', empObj);
-                    $http.post('/api/Employee', empObj).success(function () { $scope.Message = "Employee Added"; });
+                    $http.post('/api/Employee', empObj);
+                    $scope.Message = "Employee Added";
                 };
                 $scope.DeleteEmployee = function () {
                     var ID = $scope.EmployeeID;
